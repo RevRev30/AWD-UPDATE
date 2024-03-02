@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/ASSETS/santa.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: relative;
+    background-color: #23b6e6; /* Setting a blue background color */
+}
+
+.text-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white; /* White text for high contrast */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+
+    .title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: black;
+        margin-bottom: 2rem;
+    }
+
+    .cardHolder {
+        display: grid;
+        justify-content: space-between;
+        gap: 1rem;
+        width: 90%;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        padding: 1rem;
+
+        .card {
+            border-radius: 0.5rem;
+            padding: 1rem;
+            background: linear-gradient(
+                45deg,
+                black 0%, /* Change pink to black */
+                black 42%, /* Change pink to black */
+                #ffffff 42%,
+                #ffffff 45%,
+                black 45%, /* Change pink to black */
+                black 48%, /* Change pink to black */
+                #ffffff 48%,
+                #ffffff 51%,
+                black 51%, /* Change pink to black */
+                black 54%, /* Change pink to black */
+                #ffffff 54%,
+                #ffffff 57%,
+                black 57%, /* Change pink to black */
+                black 60%, /* Change pink to black */
+                #ffffff 60%,
+                #ffffff 100%
+            );
+            background-size: 300%;
+            box-shadow: 2px 3px 5px black; /* Change pink shadow to black */
+            transition: 0.5s ease-in-out;
+
+            .cardTitle {
+                color: white;
+                transition: 0.3s ease-in-out;
+                font-size: 1.5rem;
+                font-weight: 500;
+                margin-bottom: 1.5rem;
+            }
+
+            &:hover {
+                animation: colorChange 0.3s ease-in-out;
+                box-shadow: 3px 5px 5px #ff2c7d; /* Change pink shadow to black */
+                background-position: 100%;
+
+                .cardTitle {
+                    color: #ff2c7d;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
